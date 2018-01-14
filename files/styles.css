@@ -1,0 +1,52 @@
+html, body {
+    background: url('http://jonandlinda.com/codepenphotos/grey_wash_wall.png') repeat repeat;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    color: #20A4B8;
+    padding-top: 1%;
+    font-size: 38px;
+    font-family: 'Salsa';
+    text-shadow: 0.5px 0.5px #CFCFCF;
+  }
+  
+  .search {
+    padding-bottom: 2%;
+    padding-top: 1%;
+  }
+  
+  .searchbar {
+    width: 50em;
+    height: 1em;
+    border-radius: 6px;
+    padding: 1em;
+    font-size: 16px;
+  }
+  
+  .logo {
+    opacity: 0.6;
+    padding: 1.5%;
+  }
+  
+  .logo img {
+    border-radius: 9px;
+  }
+  
+  .logo:hover {
+    opacity: 1;
+  }
+  
+  .group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+  }
+  
+  .link {
+    color: white;
+  }
+  
+  
