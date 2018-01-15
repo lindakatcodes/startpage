@@ -1,0 +1,47 @@
+<!doctype html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,600|Playfair+Display:700" rel="stylesheet">
+</head>
+
+<body>
+    <div class="links">
+        <div class="references">
+            <h2>References</h2>
+            <img src="./files/img/untitled-1.png" class="hrdiv">
+                <a href="https://devdocs.io/" class="link" target="_blank">DevDocs</a>
+                <a href="https://regexr.com/" class="link" target="_blank">RegExr</a>
+                <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" class="link" target="_blank">Node Manual</a>
+                <a href="https://fonts.google.com/" class="link" target="_blank">Google Fonts</a>
+                <a href="http://htmlcolorcodes.com/color-picker/" class="link" target="_blank">Color Picker</a>
+                <a href="http://hslpicker.com/" class="link" target="_blank">HSL Picker</a>
+                <a href="https://tympanus.net/codrops/css_reference/flexbox/" class="link" target="_blank">Flexbox Reference</a>
+                <a href="https://tympanus.net/codrops/css_reference/grid/" class="link" target="_blank">Grid Reference</a>
+        </div>
+        <img src="./files/img/untitled-2.png" class="vtdiv">
+        <div class="classes">
+            <h2>Classes</h2>
+            <img src="./files/img/untitled-1.png" class="hrdiv">
+            <a href="https://classroom.udacity.com/me" class="link">Grow with Google Mobile Web</a>
+            <a href="https://courses.wesbos.com/account" class="link">Wes Bos Courses</a>
+            <a href="https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4/content" class="link">Complete Node Course</a>
+            <a href="https://www.freecodecamp.org/lindakatcodes" class="link">FreeCodeCamp</a>
+        </div>
+    </div>
+
+    <h1 id="quote"></h1>
+    
+    <script>
+    let quoteLib = require('./files/quotes');
+
+    let tag = document.getElementById('quote');
+    let randomQuote = Math.floor(Math.random() * quoteLib.quotes.length);
+
+    window.addEventListener('load', function() {
+        tag.textContent = quoteLib.quotes[randomQuote].Quote;
+    })
+    </script>
+</body>
+</html>

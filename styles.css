@@ -1,0 +1,80 @@
+html, body {
+    background: url('http://jonandlinda.com/lindaDesignPhotos/startPage/christmasmom2017-050.jpg') no-repeat fixed;
+    background-size: cover;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #e4e4e4;
+    padding: 1% 3%;
+    font-size: 38px;
+    font-family: 'Playfair Display';
+    text-shadow: -4px 3px 3px hsla(190, 9%, 15%, 1);
+  }
+
+  .links {
+    background: rgba(210, 203, 214, 0.45);
+    border-radius: 8px;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+  }
+
+  .links h2 {
+    color: #1f1f1f;
+    font-size: 2.5em;
+    margin-bottom: 2%;
+  }
+
+.references, .classes {
+  width: 44%;
+  padding: 0 2% 3% 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hrdiv {
+  width: 75%;
+  margin-bottom: 2%;
+}
+
+.link {
+  color: #1f1f1f;
+  font-size: 1.4em;
+  font-family: 'Muli';
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 1.75em;
+}
+
+.link:nth-child(even) {
+  color: #e4e4e4;
+}
+
+@media screen and (max-width: 600px) {
+  .links {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  .link {
+    font-size: 1.2em;
+  }
+
+  .hrdiv {
+    width: 150%;
+  }
+
+  .vtdiv {
+    position: absolute;
+    visibility: hidden;
+  }
+}
