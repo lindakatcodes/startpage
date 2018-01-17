@@ -1,5 +1,4 @@
 <!doctype html>
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
@@ -30,18 +29,8 @@
             <a href="https://www.freecodecamp.org/lindakatcodes" class="link">FreeCodeCamp</a>
         </div>
     </div>
-
-    <h1 id="quote"></h1>
-    
-    <script>
-    let quoteLib = require('./files/quotes');
-
-    let tag = document.getElementById('quote');
-    let randomQuote = Math.floor(Math.random() * quoteLib.quotes.length);
-
-    window.addEventListener('load', function() {
-        tag.textContent = quoteLib.quotes[randomQuote].Quote;
-    })
-    </script>
+    <div class="motivation">
+            <img src="http://jonandlinda.com/lindaDesignPhotos/startPage/shittogether-horiz.png" class="quote" alt="Quote from the TV show Rick and Morty about getting your shit together">
+        </div>
 </body>
 </html>
