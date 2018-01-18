@@ -1,27 +1,25 @@
 html, body {
     margin: 0 auto;
     text-align: center;
+    background: url('/files/img/brushed_alu_dark.png') round;
   }
 
   .quote {
     width: 55%;
     height: 90%;
-    float: left;
+    float: right;
     position: absolute;
     top: -10px;
-    left: -35px;
+    right: -35px;
     z-index: -1;
   }
 
   .links {
-    background: rgba(80, 80, 80, 0.75);
-    border-radius: 8px;
     width: 50%;
-    height: 90%;
     margin: 0 auto;
     margin-top: 2%;
     margin-right: 2%;
-    float: right;
+    float: left;
     display: flex;
     justify-content: space-around;
     z-index: 1;
@@ -59,6 +57,15 @@ html, body {
   color: #e4e4e4;
 }
 
+.link:focus {
+  outline: 4px outset #21DAB5;
+  outline-offset: 4px;
+}
+
+.link:hover {
+  color: #21DAB5;
+}
+
 @media screen and (max-width: 600px) {
   .links {
     flex-direction: column;
@@ -91,6 +98,7 @@ html, body {
     float: none;
     top: 0;
     left: 0;
+    z-index: 1;
   }
 
   .links {
