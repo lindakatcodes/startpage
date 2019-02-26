@@ -5,13 +5,14 @@ html, body {
   }
 
   .quote {
-    width: 55%;
+    width: 50%;
     height: 90%;
     float: right;
     position: absolute;
-    top: -10px;
-    right: -35px;
+    top: 15px;
+    right: 15px;
     z-index: -1;
+    border: 2px solid #DEDEDE;
   }
 
   .links {
@@ -45,7 +46,7 @@ html, body {
 }
 
 .link {
-  color: #1f1f1f;
+  color: #14B1FF;
   font-size: 1.4em;
   font-family: 'Muli';
   font-weight: 600;
@@ -54,16 +55,16 @@ html, body {
 }
 
 .link:nth-child(even) {
-  color: #e4e4e4;
+  color: #3CBE76;
 }
 
 .link:focus {
-  outline: 4px outset #21DAB5;
+  outline: 4px outset #DEDEDE;
   outline-offset: 4px;
 }
 
 .link:hover {
-  color: #21DAB5;
+  color: #DEDEDE;
 }
 
 @media screen and (max-width: 600px) {
