@@ -45,7 +45,6 @@
 
     <script>
         const time = new Date().getHours();
-        console.log('Time: ', time);
         
         function whichMessage(hour) {
             let greeting = '';
@@ -86,14 +85,12 @@
                     greeting = 'day';
                     break;
             }
-            console.log(greeting);
             return greeting;
         }
 
         const compliments = ['awesome', 'beautiful', 'smart', 'capable', 'worthwhile', 'amazing', 'lovely', 'kickass'];
         function number() {
             let pick = Math.round(Math.random() * (compliments.length - 1));
-            console.log(pick);
             return pick;
         }    
 
