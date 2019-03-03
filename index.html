@@ -2,10 +2,23 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,600|Playfair+Display:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Cookie" rel="stylesheet">
 </head>
 
 <body>
+    <main>
+        <section class="hello">
+            <h1 id="greeting"></h1>
+            <h2 id="compliment"></h2>
+        </section>
+
+        <section class="references">
+
+        </section>
+    </main>
+
+
+<!--     
     <div class="links">
         <div class="references">
             <h2>References</h2>
@@ -34,6 +47,64 @@
     </div>
     <div class="motivation">
         <img src="./files/img/shittogether-horiz-t.png" class="quote" alt="Quote from the TV show Rick and Morty about getting your shit together">
-    </div>
+    </div> -->
+
+    <script>
+        const time = new Date().getHours();
+        console.log('Time: ', time);
+        
+        function whichMessage(hour) {
+            let greeting = '';
+            switch (hour) {
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                    greeting = 'morning';
+                    break;
+                case 12:
+                case 13:
+                case 14:
+                case 15:
+                case 16:
+                case 17:
+                    greeting = 'afternoon';
+                    break;
+                case 18:
+                case 19:
+                case 20:
+                case 21:
+                case 22:
+                case 23:
+                    greeting = 'evening';
+                    break;
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                    greeting = 'night';
+                    break;
+                default: 
+                    greeting = 'day';
+                    break;
+            }
+            console.log(greeting);
+            return greeting;
+        }
+
+        const compliments = ['awesome', 'beautiful', 'smart', 'capable', 'worthwhile', 'amazing', 'lovely', 'kickass'];
+        function number() {
+            let pick = Math.round(Math.random() * (compliments.length - 1));
+            console.log(pick);
+            return pick;
+        }    
+
+        document.getElementById('greeting').innerHTML = `Good ${whichMessage(time)}, Linda.`;
+        document.getElementById('compliment').innerHTML = `(You're ${compliments[number()]}.)`;
+    </script>
 </body>
 </html>

@@ -1,10 +1,42 @@
-html, body {
-    margin: 0 auto;
-    text-align: center;
-    background: url('/startpage/files/img/prism.png') round;
-  }
+html {
+  margin: 0;
+  font-size: 16px;
+}
 
-  .quote {
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background: no-repeat center/cover url('./files/img/succulent.jpg');
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hello {
+  margin: 10% 0 0 0;
+}
+
+h1, h2 {
+  margin: 0;
+  font-family: 'Cookie', script;
+  text-align: center;
+}
+
+#greeting {
+  font-size: 10vw;
+  color: white;
+}
+
+#compliment {
+  font-size: 4vw;
+  color: #aaa;
+}
+
+
+
+
+
+  /* .quote {
     width: 50%;
     height: 90%;
     float: right;
@@ -123,4 +155,4 @@ html, body {
   .links h2 {
     font-size: 2.3em;
   }
-}
+} */
