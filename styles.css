@@ -27,8 +27,9 @@ body {
 
 h1, h2 {
   margin: 0;
-  font-family: 'Cookie', script;
+  font-family: 'Engagement', script;
   text-align: center;
+  font-weight: lighter;
 }
 
 #greeting {
@@ -39,7 +40,7 @@ h1, h2 {
 #compliment {
   font-size: 4vw;
   color: var(--white);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .links {
@@ -56,9 +57,10 @@ h1, h2 {
 .title {
   color: var(--white);
   font-size: 2.6rem;
-  font-family: 'Cookie', cursive;
+  font-family: 'Engagement', cursive;
+  font-weight: lighter;
   margin: 2% 15%;
-  padding-bottom: 2%;
+  padding-bottom: 1%;
   border-bottom: 4px solid var(--pink);
   text-align: center;
 }
@@ -94,6 +96,29 @@ h1, h2 {
 }
 
 .link:hover {
+  color: var(--white); 
+} 
+
+.courses .link {
+  color: var(--green);
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.courses .link:nth-child(even) {
+  color: var(--purple);
+}
+
+.courses .link:focus {
+  outline: 3.5px outset var(--purple);
+  outline-offset: 5px;
+}
+
+.courses .link:focus:nth-child(even) {
+  outline: 3.5px outset var(--green);
+}
+
+.courses .link:hover {
   color: var(--white); 
 } 
 
