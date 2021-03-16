@@ -1,0 +1,14 @@
+{
+  "name": "startpage",
+  "version": "1.0.0",
+  "description": "personal startpage",
+  "main": "index.html",
+  "scripts": {
+    "start": "snowpack dev"
+  },
+  "author": "Linda Thompson",
+  "license": "ISC",
+  "devDependencies": {
+    "snowpack": "^3.0.13"
+  }
+}

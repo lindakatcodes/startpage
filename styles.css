@@ -1,0 +1,183 @@
+:root {
+  --purple: #B78FF2;
+  --green: #08E1BC;
+  --pink: #D56C99;
+  --white: #F6F6F6;
+  --black: #2e2e2e;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Acme', san-serif;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: no-repeat center/cover url('./files/img/succulent-opt.jpg');
+}
+
+.hello {
+  margin: 5% 0 0 0;
+}
+
+h1, h2 {
+  margin: 0;
+  font-family: 'Engagement', script;
+  text-align: center;
+  font-weight: lighter;
+}
+
+#greeting {
+  font-size: 10vw;
+  color: var(--white);
+}
+
+#compliment {
+  font-size: 4vw;
+  color: var(--white);
+  opacity: 0.7;
+}
+
+.links {
+  width: 90%;
+  height: 50%;
+  margin: 2% auto;
+  background-color: var(--black);
+  opacity: 0.8;
+  display: flex;
+  padding-bottom: 2%;
+  border-radius: 15px;
+}
+
+.title {
+  color: var(--white);
+  font-size: 2.6rem;
+  font-family: 'Engagement', cursive;
+  font-weight: lighter;
+  margin: 2% 15%;
+  padding-bottom: 1%;
+  border-bottom: 4px solid var(--pink);
+  text-align: center;
+}
+
+.references, .courses {
+  width: 50%;
+}
+
+.sources {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.7;
+}
+
+.link {
+  color: var(--purple);
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.link:nth-child(even) {
+  color: var(--green);
+}
+
+.link:focus {
+  outline: 3.5px outset var(--green);
+  outline-offset: 5px;
+}
+
+.link:focus:nth-child(even) {
+  outline: 3.5px outset var(--purple);
+}
+
+.link:hover {
+  color: var(--white); 
+} 
+
+.courses .link {
+  color: var(--green);
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.courses .link:nth-child(even) {
+  color: var(--purple);
+}
+
+.courses .link:focus {
+  outline: 3.5px outset var(--purple);
+  outline-offset: 5px;
+}
+
+.courses .link:focus:nth-child(even) {
+  outline: 3.5px outset var(--green);
+}
+
+.courses .link:hover {
+  color: var(--white); 
+} 
+
+@media screen and (max-width: 600px) {
+  body {
+    overflow: hidden visible;
+  }
+
+  #greeting {
+    font-size: 12vw;
+  }
+
+  #compliment {
+    font-size: 6vw;
+  }
+
+  .links {
+    margin-left: 3%;
+  }
+
+  .references, .courses {
+    width: 45%;
+    padding-left: 3%;
+  }
+
+  .sources {
+    align-items: flex-start;
+    padding-top: 4%;
+  }
+
+  .title {
+    text-align: left;
+    line-height: 1.45;
+    padding: 0;
+    margin: 2% 5% 0 0;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .hello {
+    margin: 2% 0 0 0;
+  }
+
+  #greeting {
+    font-size: 7vw;
+  }
+
+  #compliment {
+    font-size: 3vw;
+  }
+
+  .title {
+    font-size: 3.2rem;
+    margin: 1% 20%;
+  }
+
+  .links {
+    margin-top: 1%;
+    padding-bottom: 1%;
+    width: 75%;
+  }
+}
