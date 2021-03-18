@@ -2,7 +2,7 @@
   --yellow: #FFD37B;
   --green: #7EBEBD;
   --pink: #DD7C84;
-  --gray: #a7a0aa;
+  --gray: #C5BFC5;
   --black: #17171A;
   --sanserif: 'Acme', san-serif;
   --cursive: 'Engagement', script;
@@ -19,7 +19,7 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: var(--black);
   color: var(--gray);
   /* background: no-repeat center/cover url('./files/img/succulent-opt.jpg'); */
@@ -28,12 +28,11 @@ body {
 main {
   display: grid;
   grid-template-areas: 
-    "greet greet greet"
-    "search search search"
-    "qa qa qa"
-    "design active tools"
-    "ref docs learn"
-    "comp comp comp";
+    "greet"
+    "search"
+    "qa"
+    "links"
+    "comp";
     place-items: center;
 }
 
@@ -45,20 +44,20 @@ h1, h2, h3 {
 }
 
 #greeting {
-  font-size: 10vw;
+  font-size: 6vw;
   color: var(--gray);
   grid-area: greet;
 }
 
 #compliment {
-  font-size: 4vw;
+  font-size: 3vw;
   color: var(--gray);
   grid-area: comp;
 }
 
 .search-group {
   width: 60%;
-  margin: 2% auto;
+  margin: 1% auto;
   grid-area: search;
   /* border: 1px solid red; */
 }
@@ -92,44 +91,114 @@ h1, h2, h3 {
 }
 
 .qa-link {
-  border: 2px solid var(--green);
-  width: 10%;
-  padding: 2%;
+  width: 18%;
+  color: var(--pink);
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  border-bottom: 3px solid var(--green);
 }
 
 .links {
-  width: 90%;
-  /* height: 50%; */
-  margin: 2% auto;
-  /* background-color: var(--black); */
-  /* opacity: 0.8; */
-  display: flex;
-  padding-bottom: 2%;
-  border-radius: 15px;
+  width: 96%;
+  margin: 1% auto;
+  grid-area: links;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+  "design activelearn tools" 
+  "ref docs learn";
+  justify-content: center;
+  row-gap: 3%;
+}
+
+.link-group {
+  display: grid;
+  grid-template-rows: 0.75fr 1fr;
+  margin: 1% auto;
+  width: 94%;
+  border-radius: 10px;
 }
 
 .title {
   color: var(--gray);
-  font-size: 2.6rem;
-  /* font-family: var(--cursive); */
-  font-weight: lighter;
-  margin: 2% 15%;
+  font-size: 3.1vw;
+  margin: 1% 10%;
   padding-bottom: 1%;
-  border-bottom: 4px solid var(--pink);
-  /* text-align: center; */
 }
 
-.references, .courses {
-  width: 50%;
-}
-
-.sources {
-  display: flex;
-  flex-direction: column;
+.link-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1%;
   align-items: center;
-  line-height: 1.7;
+  justify-content: center;
+  align-content: start;
+  grid-auto-flow: row;
 }
 
+.design {
+  grid-area: design;
+  border: 3px solid var(--green);
+}
+
+.design .title {
+  border-bottom: 3px solid var(--pink);
+}
+
+.reference {
+  grid-area: ref;
+  border: 3px solid var(--pink);
+}
+
+.reference .title {
+  border-bottom: 3px solid var(--green);
+}
+
+.active-learning {
+  grid-area: activelearn;
+  border: 3px solid var(--yellow);
+}
+
+.active-learning .title {
+  border-bottom: 3px solid var(--green);
+}
+
+.docs {
+  grid-area: docs;
+  border: 3px solid var(--green);
+}
+
+.docs .title {
+  border-bottom: 3px solid var(--yellow);
+}
+
+.js-tools {
+  grid-area: tools;
+  border: 3px solid var(--pink);
+}
+
+.js-tools .title {
+  border-bottom: 3px solid var(--yellow);
+}
+
+.learning {
+  grid-area: learn;
+  border: 3px solid var(--yellow);
+}
+
+.learning .title {
+  border-bottom: 3px solid var(--pink);
+}
+
+.lg-link {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--gray);
+  text-align: center;
+}
+
+/* Past styles kept to show focus styles 
 .link {
   color: var(--purple);
   font-size: 1.5rem;
@@ -176,6 +245,7 @@ h1, h2, h3 {
   color: var(--white); 
 } 
 
+/* old media queries
 @media screen and (max-width: 600px) {
   body {
     overflow: hidden visible;
@@ -235,3 +305,4 @@ h1, h2, h3 {
     width: 75%;
   }
 }
+ */
