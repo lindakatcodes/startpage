@@ -4,51 +4,75 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Acme|Engagement" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Acme|Engagement|Material+Icons" rel="stylesheet">
   <title>Homepage</title>
 </head>
 
+<!-- section class links
+h2 class title
+div class sources
+a class link -->
+
 <body>
   <main>
-    <section class="hello">
-      <h1 id="greeting"></h1>
-      <h2 id="compliment"></h2>
+    <h1 id="greeting"></h1>
+
+    <section class="search-group">
+      <form id="search-form" action="https://www.google.com/search" method="get">
+        <label for="search"><span class="material-icons search-icon">search</span></label>
+        <input type="text" name="query" id="search"autofocus="autofocus" autocomplete="on" placeholder="What can I help you find?" />
+      </form>
+    </section>
+
+    <section class="quick-access">
+      <a href="" class="qa-link">YouTube</a>
+      <a href="" class="qa-link">Notion Dashboard</a>
+      <a href="" class="qa-link">Amazon Video</a>
+      <a href="" class="qa-link">Excalidraw</a>
+      <a href="" class="qa-link">Google Keep</a>
     </section>
 
     <section class="links">
-      <section class="references">
-        <h3 class="title">References</h3>
-        <div class="sources">
-          <a href="https://devdocs.io/" class="link">DevDocs</a>
-          <a href="https://regexr.com/" class="link">RegExr</a>
-          <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" class="link">Markdown
-            Cheatsheet</a>
-          <a href="https://rogerdudler.github.io/git-guide/" class="link">Git Tutorial</a>
-          <a href="https://fonts.google.com/" class="link">Google Fonts</a>
-          <a href="http://htmlcolorcodes.com/color-picker/" class="link">Color Picker</a>
-          <a href="http://hslpicker.com/" class="link">HSL Picker</a>
-          <a href="https://tympanus.net/codrops/css_reference/flexbox/" class="link">Flexbox Reference</a>
-          <a href="https://tympanus.net/codrops/css_reference/grid/" class="link">Grid Reference</a>
-        </div>
-      </section>
-      <section class="courses">
-        <h3 class="title">Online Courses</h3>
-        <div class="sources">
-          <a href="https://courses.wesbos.com/account/access/5de090b0dd20a80c28df1814/" class="link">Beginner JavaScript
-            - Wes Bos</a>
-          <a href="https://www.howtographql.com/" class="link">How To GraphQL</a>
-          <a href="https://www.udemy.com/course/automate/learn/lecture/3309062#overview" class="link">Automate the
-            Boring Stuff w/ Python</a>
-          <a href="https://adventofcode.com/" class="link">Advent of Code!</a>
-          <a href="https://www.freecodecamp.org/lindakatcodes" class="link">FreeCodeCamp</a>
-          <a href="https://serviceworkies.mastery.games/" class="link">Service Workies</a>
-          <a href="https://courses.rachelnabors.com/courses/enrolled/66065" class="link">Motion Design - Rachel
-            Nabors</a>
-          <a href="https://codecollege.ca/p/css3-coding-challenge" class="link">CSS3 in 30 Days</a>
-          <a href="https://courses.wesbos.com/account" class="link">Other Wes Bos Courses</a>
-        </div>
-      </section>
+      <div class="link-group design">
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+      </div>
+      <div class="link-group reference">
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+      </div>
+      <div class="link-group active-learning">
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+      </div>
+      <div class="link-group docs">
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+      </div>
+      <div class="link-group js-tools">
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+      </div>
+      <div class="link-group learning">
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+        <a href="" class="lg-link"></a>
+      </div>
     </section>
+
+    <h3 id="compliment"></h3>
   </main>
 
   <script>
