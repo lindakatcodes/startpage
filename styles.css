@@ -17,22 +17,23 @@ html {
 
 body {
   margin: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   /* overflow: hidden; */
-  background: var(--black);
   color: var(--gray);
+  background: var(--black);
   /* background: no-repeat center/cover url('./files/img/succulent-opt.jpg'); */
 }
 
 main {
   display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(auto-fill, 1fr);
   grid-template-areas: 
-    "greet"
-    "search"
-    "qa"
-    "links"
-    "comp";
+    ". . greet greet greet . ."
+    ". . search search search . ."
+    ". . qa qa qa . ."
+    "links links links links links links links";
     place-items: center;
 }
 
@@ -53,19 +54,18 @@ h1, h2, h3 {
   font-size: 3vw;
   color: var(--gray);
   grid-area: comp;
+  align-self: center;
 }
 
 .search-group {
-  width: 60%;
   margin: 1% auto;
+  width: 80%;
   grid-area: search;
-  /* border: 1px solid red; */
 }
 
 #search-form {
   display: flex;
   justify-content: space-around;
-  align-items: flex-end;
 }
 
 .search-icon {
@@ -73,7 +73,7 @@ h1, h2, h3 {
 }
 
 #search {
-  flex-basis: 97%;
+  width: 97%;
   background: transparent;
   outline: none;
   border: none;
@@ -84,19 +84,25 @@ h1, h2, h3 {
 }
 
 .quick-access {
-  width: 60%;
+  width: 80%;
+  margin-top: 3%;
   grid-area: qa;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+  border-left: 3px solid var(--green);
+  border-right: 3px solid var(--green);
 }
 
 .qa-link {
-  width: 18%;
+  /* width: 18%; */
   color: var(--pink);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-align: center;
   text-decoration: none;
-  border-bottom: 3px solid var(--green);
+  padding: 0 1%;
+  border-left: 3px solid var(--green);
+  border-right: 3px solid var(--green);
 }
 
 .links {
@@ -104,37 +110,47 @@ h1, h2, h3 {
   margin: 1% auto;
   grid-area: links;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fill, 1fr);
   grid-template-areas:
-  "design activelearn tools" 
-  "ref docs learn";
-  justify-content: center;
-  row-gap: 3%;
+  "design activelearn activelearn tools" 
+  "design learn learn tools" 
+  "design learn learn docs" 
+  "ref learn learn docs" 
+  "ref comp comp docs";
 }
 
 .link-group {
-  display: grid;
-  grid-template-rows: 0.75fr 1fr;
   margin: 1% auto;
-  width: 94%;
+  width: 98%;
   border-radius: 10px;
+  text-align: left;
 }
 
 .title {
   color: var(--gray);
-  font-size: 3.1vw;
-  margin: 1% 10%;
-  padding-bottom: 1%;
+  font-size: 2.8vw;
+  margin-top: 0.5%;
+  /* padding-bottom: 1%; */
 }
 
 .link-wrapper {
+  list-style-type: none;
+  margin: 1% auto;
+  padding-left: 0;
+  text-align: center;
+}
+
+.lg-link {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.lw-wide {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 1%;
-  align-items: center;
-  justify-content: center;
-  align-content: start;
-  grid-auto-flow: row;
+  width: 70%;
 }
 
 .design {
@@ -143,7 +159,7 @@ h1, h2, h3 {
 }
 
 .design .title {
-  border-bottom: 3px solid var(--pink);
+  text-decoration: double underline var(--pink);
 }
 
 .reference {
@@ -152,7 +168,7 @@ h1, h2, h3 {
 }
 
 .reference .title {
-  border-bottom: 3px solid var(--green);
+  text-decoration: double underline var(--green);
 }
 
 .active-learning {
@@ -161,16 +177,16 @@ h1, h2, h3 {
 }
 
 .active-learning .title {
-  border-bottom: 3px solid var(--green);
+  text-decoration: double underline var(--green);
 }
 
 .docs {
   grid-area: docs;
-  border: 3px solid var(--green);
+  border: 3px solid var(--yellow);
 }
 
 .docs .title {
-  border-bottom: 3px solid var(--yellow);
+  text-decoration: double underline var(--pink);
 }
 
 .js-tools {
@@ -179,23 +195,16 @@ h1, h2, h3 {
 }
 
 .js-tools .title {
-  border-bottom: 3px solid var(--yellow);
+  text-decoration: double underline var(--yellow);
 }
 
 .learning {
   grid-area: learn;
-  border: 3px solid var(--yellow);
+  border: 3px solid var(--green);
 }
 
 .learning .title {
-  border-bottom: 3px solid var(--pink);
-}
-
-.lg-link {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: var(--gray);
-  text-align: center;
+  text-decoration: double underline var(--yellow);
 }
 
 /* Past styles kept to show focus styles 
@@ -244,65 +253,83 @@ h1, h2, h3 {
 .courses .link:hover {
   color: var(--white); 
 } 
+*/
 
-/* old media queries
 @media screen and (max-width: 600px) {
-  body {
-    overflow: hidden visible;
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "greet"
+      "search"
+      "qa"
+      "links";
   }
 
   #greeting {
-    font-size: 12vw;
+    font-size: 15vw;
   }
 
-  #compliment {
-    font-size: 6vw;
+  .search-group {
+    width: 90%;
+  }
+
+  .quick-access {
+    width: 90%;
+    flex-wrap: wrap;
   }
 
   .links {
-    margin-left: 3%;
-  }
-
-  .references, .courses {
-    width: 45%;
-    padding-left: 3%;
-  }
-
-  .sources {
-    align-items: flex-start;
-    padding-top: 4%;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "activelearn"
+      "design"
+      "ref"
+      "tools"
+      "docs"
+      "learn"
+      "comp";
+      justify-items: center;
   }
 
   .title {
-    text-align: left;
-    line-height: 1.45;
-    padding: 0;
-    margin: 2% 5% 0 0;
+    font-size: 4vw;
+  }
+
+  .lg-link {
+    font-size: 1.2rem;
   }
 }
 
-@media screen and (min-width: 1100px) {
-  .hello {
-    margin: 2% 0 0 0;
+@media screen and (max-width: 1100px) {
+  main {
+    grid-template-areas: 
+      ". greet greet greet greet greet ."
+      ". search search search search search ."
+      ". qa qa qa qa qa ."
+      "links links links links links links links";
   }
 
   #greeting {
-    font-size: 7vw;
+    font-size: 8vw;
   }
 
-  #compliment {
-    font-size: 3vw;
+  #complement {
+    font-size: 5vw;
+  }
+
+  .quick-access {
+    margin-bottom: 2%;
   }
 
   .title {
-    font-size: 3.2rem;
-    margin: 1% 20%;
+    font-size: 3.2vw;
   }
 
-  .links {
-    margin-top: 1%;
-    padding-bottom: 1%;
-    width: 75%;
+  .lg-link {
+    font-size: 1.3rem;
+  }
+
+  .lw-wide {
+    width: 95%;
   }
 }
- */
