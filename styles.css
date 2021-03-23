@@ -19,10 +19,10 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  /* overflow: hidden; */
+  overflow: hidden;
   color: var(--gray);
-  background: var(--black);
-  /* background: no-repeat center/cover url('./files/img/succulent-opt.jpg'); */
+  /* background: var(--black); */
+  background: no-repeat center/cover url('./files/img/dark-swirls.jpg');
 }
 
 main {
@@ -45,13 +45,13 @@ h1, h2, h3 {
 }
 
 #greeting {
-  font-size: 6vw;
+  font-size: 5.5vw;
   color: var(--gray);
   grid-area: greet;
 }
 
 #compliment {
-  font-size: 3vw;
+  font-size: 2.5vw;
   color: var(--gray);
   grid-area: comp;
   align-self: center;
@@ -90,19 +90,33 @@ h1, h2, h3 {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  border-left: 3px solid var(--green);
   border-right: 3px solid var(--green);
 }
 
 .qa-link {
-  /* width: 18%; */
   color: var(--pink);
   font-size: 1.4rem;
   text-align: center;
   text-decoration: none;
   padding: 0 1%;
   border-left: 3px solid var(--green);
-  border-right: 3px solid var(--green);
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--pink), var(--pink));
+  background-size: 100% 4px, 0 4px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.25s linear, background-position 0.25s linear, color 0.25s linear;
+}
+
+.qa-link:hover, .qa-link:focus {
+  background-size: 0 4px, 100% 4px;
+  background-position: 100% 100%, 0 100%;
+  color: var(--green);
+  border-left-color: var(--pink);
+  border-right-color: var(--pink);
+}
+
+.qa-link:focus {
+  outline: none;
 }
 
 .links {
@@ -131,7 +145,6 @@ h1, h2, h3 {
   color: var(--gray);
   font-size: 2.8vw;
   margin-top: 0.5%;
-  /* padding-bottom: 1%; */
 }
 
 .link-wrapper {
@@ -141,15 +154,31 @@ h1, h2, h3 {
   text-align: center;
 }
 
+.lg-item {
+  padding-bottom: 1%;
+}
+
 .lg-link {
   font-size: 1.4rem;
   text-decoration: none;
   color: var(--gray);
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: color 0.25s linear, background-size 0.25s linear, background-position 0.25s linear;
+}
+
+.lg-link:hover, .lg-link:focus {
+  background-size: 0 3px, 100% 3px;
+  background-position: 100% 100%, 0 100%;
+  outline: none;
 }
 
 .lw-wide {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-flow: column;
   width: 70%;
 }
 
@@ -159,7 +188,15 @@ h1, h2, h3 {
 }
 
 .design .title {
-  text-decoration: double underline var(--pink);
+  text-decoration: wavy underline var(--pink);
+}
+
+.design .lg-link {
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--pink), var(--pink));
+}
+
+.design .lg-link:hover, .design .lg-link:focus {
+  color: var(--green);
 }
 
 .reference {
@@ -168,7 +205,15 @@ h1, h2, h3 {
 }
 
 .reference .title {
-  text-decoration: double underline var(--green);
+  text-decoration: wavy underline var(--green);
+}
+
+.reference .lg-link {
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--green), var(--green));
+}
+
+.reference .lg-link:hover, .reference .lg-link:focus {
+  color: var(--pink);
 }
 
 .active-learning {
@@ -177,25 +222,15 @@ h1, h2, h3 {
 }
 
 .active-learning .title {
-  text-decoration: double underline var(--green);
+  text-decoration: wavy underline var(--green);
 }
 
-.docs {
-  grid-area: docs;
-  border: 3px solid var(--yellow);
+.active-learning .lg-link {
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--green), var(--green));
 }
 
-.docs .title {
-  text-decoration: double underline var(--pink);
-}
-
-.js-tools {
-  grid-area: tools;
-  border: 3px solid var(--pink);
-}
-
-.js-tools .title {
-  text-decoration: double underline var(--yellow);
+.active-learning .lg-link:hover, .active-learning .lg-link:focus {
+  color: var(--yellow);
 }
 
 .learning {
@@ -204,58 +239,56 @@ h1, h2, h3 {
 }
 
 .learning .title {
-  text-decoration: double underline var(--yellow);
+  text-decoration: wavy underline var(--yellow);
 }
 
-/* Past styles kept to show focus styles 
-.link {
-  color: var(--purple);
-  font-size: 1.5rem;
-  text-decoration: none;
+.learning .lg-link {
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--yellow), var(--yellow));
 }
 
-.link:nth-child(even) {
+.learning .lg-link:hover, .learning .lg-link:focus {
   color: var(--green);
 }
 
-.link:focus {
-  outline: 3.5px outset var(--green);
-  outline-offset: 5px;
+.js-tools {
+  grid-area: tools;
+  border: 3px solid var(--pink);
 }
 
-.link:focus:nth-child(even) {
-  outline: 3.5px outset var(--purple);
+.js-tools .title {
+  text-decoration: wavy underline var(--yellow);
 }
 
-.link:hover {
-  color: var(--gray); 
-} 
-
-.courses .link {
-  color: var(--green);
-  font-size: 1.5rem;
-  text-decoration: none;
+.js-tools .lg-link {
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--yellow), var(--yellow));
 }
 
-.courses .link:nth-child(even) {
-  color: var(--purple);
+.js-tools .lg-link:hover, .js-tools .lg-link:focus {
+  color: var(--pink);
 }
 
-.courses .link:focus {
-  outline: 3.5px outset var(--purple);
-  outline-offset: 5px;
+.docs {
+  grid-area: docs;
+  border: 3px solid var(--yellow);
 }
 
-.courses .link:focus:nth-child(even) {
-  outline: 3.5px outset var(--green);
+.docs .title {
+  text-decoration: wavy underline var(--pink);
 }
 
-.courses .link:hover {
-  color: var(--white); 
-} 
-*/
+.docs .lg-link {
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--pink), var(--pink));
+}
 
-@media screen and (max-width: 600px) {
+.docs .lg-link:hover, .docs .lg-link:focus {
+  color: var(--yellow);
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    overflow: visible;
+  }
+  
   main {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -266,19 +299,35 @@ h1, h2, h3 {
   }
 
   #greeting {
-    font-size: 15vw;
+    font-size: 12vw;
+  }
+
+  #compliment {
+    margin: 2% 0;
+    font-size: 6vw;
   }
 
   .search-group {
+    margin: 3% 0;
     width: 90%;
   }
 
   .quick-access {
     width: 90%;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 3%;
+    border: none;
+  }
+
+  .qa-link {
+    margin-bottom: 2%;
+    border-right: none;
+    border-left-width: 4px;
   }
 
   .links {
+    width: 90%;
     grid-template-columns: 1fr;
     grid-template-areas:
       "activelearn"
@@ -292,15 +341,52 @@ h1, h2, h3 {
   }
 
   .title {
-    font-size: 4vw;
+    font-size: 7vw;
   }
 
   .lg-link {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+
+  .lw-wide {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+  }
+
+  .docs {
+    border-color: var(--yellow);
+  }
+
+  .docs .title {
+    text-decoration-color: var(--pink);
+  }
+
+  .js-tools {
+    border-color: var(--green);
+  }
+
+  .js-tools .title {
+    text-decoration-color: var(--yellow);
+  }
+  
+  .js-tools .lg-link:hover, .js-tools .lg-link:focus {
+    color: var(--green);
+  }
+
+  .learning {
+    border-color: var(--pink);
+  }
+
+  .learning .title {
+    text-decoration-color: var(--yellow);
+  }
+
+  .learning .lg-link:hover, .learning .lg-link:focus {
+    color: var(--pink);
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (min-width: 801px) and (max-width: 1300px) {
   main {
     grid-template-areas: 
       ". greet greet greet greet greet ."
@@ -313,8 +399,8 @@ h1, h2, h3 {
     font-size: 8vw;
   }
 
-  #complement {
-    font-size: 5vw;
+  #compliment {
+    font-size: 4vw;
   }
 
   .quick-access {
@@ -330,6 +416,6 @@ h1, h2, h3 {
   }
 
   .lw-wide {
-    width: 95%;
+    grid-template-columns: 1fr;
   }
 }
