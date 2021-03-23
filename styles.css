@@ -1,130 +1,301 @@
 :root {
-  --purple: #B78FF2;
-  --green: #08E1BC;
-  --pink: #D56C99;
-  --white: #F6F6F6;
-  --black: #2e2e2e;
+  --yellow: #FFD37B;
+  --green: #7EBEBD;
+  --pink: #DD7C84;
+  --gray: #C5BFC5;
+  --black: #17171A;
+  --sanserif: 'Acme', san-serif;
+  --cursive: 'Engagement', script;
 }
 
 html {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  font-family: 'Acme', san-serif;
+  font-family: var(--sanserif);
 }
 
 body {
   margin: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  background: no-repeat center/cover url('./files/img/succulent-opt.jpg');
+  color: var(--gray);
+  /* background: var(--black); */
+  background: no-repeat center/cover url('./files/img/dark-swirls.jpg');
 }
 
-.hello {
-  margin: 5% 0 0 0;
+main {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(auto-fill, 1fr);
+  grid-template-areas: 
+    ". . greet greet greet . ."
+    ". . search search search . ."
+    ". . qa qa qa . ."
+    "links links links links links links links";
+    place-items: center;
 }
 
-h1, h2 {
+h1, h2, h3 {
   margin: 0;
-  font-family: 'Engagement', script;
+  font-family: var(--cursive);
   text-align: center;
   font-weight: lighter;
 }
 
 #greeting {
-  font-size: 10vw;
-  color: var(--white);
+  font-size: 5.5vw;
+  color: var(--gray);
+  grid-area: greet;
 }
 
 #compliment {
-  font-size: 4vw;
-  color: var(--white);
-  opacity: 0.7;
+  font-size: 2.5vw;
+  color: var(--gray);
+  grid-area: comp;
+  align-self: center;
+}
+
+.search-group {
+  margin: 1% auto;
+  width: 80%;
+  grid-area: search;
+}
+
+#search-form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-icon {
+  color: var(--gray);
+}
+
+#search {
+  width: 97%;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid var(--yellow);
+  padding: 0.75%;
+  color: var(--gray);
+  font-size: 1.05rem;
+}
+
+.quick-access {
+  width: 80%;
+  margin-top: 3%;
+  grid-area: qa;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-right: 3px solid var(--green);
+}
+
+.qa-link {
+  color: var(--pink);
+  font-size: 1.4rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 1%;
+  border-left: 3px solid var(--green);
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--pink), var(--pink));
+  background-size: 100% 4px, 0 4px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s ease-in-out, background-position 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.qa-link:hover, .qa-link:focus {
+  background-size: 0 4px, 100% 4px;
+  background-position: 100% 100%, 0 100%;
+  color: var(--green);
+  border-left-color: var(--pink);
+  border-right-color: var(--pink);
+}
+
+.qa-link:focus {
+  outline: none;
 }
 
 .links {
-  width: 90%;
-  height: 50%;
-  margin: 2% auto;
-  background-color: var(--black);
-  opacity: 0.8;
-  display: flex;
-  padding-bottom: 2%;
-  border-radius: 15px;
+  width: 96%;
+  margin: 1% auto;
+  grid-area: links;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fill, 1fr);
+  grid-template-areas:
+  "design activelearn activelearn tools" 
+  "design learn learn tools" 
+  "design learn learn docs" 
+  "ref learn learn docs" 
+  "ref comp comp docs";
+}
+
+.link-group {
+  margin: 1% auto;
+  width: 98%;
+  border-radius: 10px;
+  text-align: left;
 }
 
 .title {
-  color: var(--white);
-  font-size: 2.6rem;
-  font-family: 'Engagement', cursive;
-  font-weight: lighter;
-  margin: 2% 15%;
-  padding-bottom: 1%;
-  border-bottom: 4px solid var(--pink);
+  color: var(--gray);
+  font-size: 2.8vw;
+  margin-top: 0.5%;
+}
+
+.link-wrapper {
+  list-style-type: none;
+  margin: 1% auto;
+  padding-left: 0;
   text-align: center;
 }
 
-.references, .courses {
-  width: 50%;
+.lg-item {
+  padding-bottom: 1%;
 }
 
-.sources {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1.7;
-}
-
-.link {
-  color: var(--purple);
-  font-size: 1.5rem;
+.lg-link {
+  font-size: 1.4rem;
   text-decoration: none;
+  color: var(--gray);
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: color 0.4s ease-in-out, background-size 0.4s ease-in-out, background-position 0.4s ease-in-out;
 }
 
-.link:nth-child(even) {
+.lg-link:hover, .lg-link:focus {
+  background-size: 0 3px, 100% 3px;
+  background-position: 100% 100%, 0 100%;
+  outline: none;
+}
+
+.lw-wide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-flow: column;
+  width: 70%;
+}
+
+.design {
+  grid-area: design;
+  border: 3px solid var(--green);
+}
+
+.design .title {
+  text-decoration: wavy underline var(--pink);
+}
+
+.design .lg-link {
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--pink), var(--pink));
+}
+
+.design .lg-link:hover, .design .lg-link:focus {
   color: var(--green);
 }
 
-.link:focus {
-  outline: 3.5px outset var(--green);
-  outline-offset: 5px;
+.reference {
+  grid-area: ref;
+  border: 3px solid var(--pink);
 }
 
-.link:focus:nth-child(even) {
-  outline: 3.5px outset var(--purple);
+.reference .title {
+  text-decoration: wavy underline var(--green);
 }
 
-.link:hover {
-  color: var(--white); 
-} 
+.reference .lg-link {
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--green), var(--green));
+}
 
-.courses .link {
+.reference .lg-link:hover, .reference .lg-link:focus {
+  color: var(--pink);
+}
+
+.active-learning {
+  grid-area: activelearn;
+  border: 3px solid var(--yellow);
+}
+
+.active-learning .title {
+  text-decoration: wavy underline var(--green);
+}
+
+.active-learning .lg-link {
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--green), var(--green));
+}
+
+.active-learning .lg-link:hover, .active-learning .lg-link:focus {
+  color: var(--yellow);
+}
+
+.learning {
+  grid-area: learn;
+  border: 3px solid var(--green);
+}
+
+.learning .title {
+  text-decoration: wavy underline var(--yellow);
+}
+
+.learning .lg-link {
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--yellow), var(--yellow));
+}
+
+.learning .lg-link:hover, .learning .lg-link:focus {
   color: var(--green);
-  font-size: 1.5rem;
-  text-decoration: none;
 }
 
-.courses .link:nth-child(even) {
-  color: var(--purple);
+.js-tools {
+  grid-area: tools;
+  border: 3px solid var(--pink);
 }
 
-.courses .link:focus {
-  outline: 3.5px outset var(--purple);
-  outline-offset: 5px;
+.js-tools .title {
+  text-decoration: wavy underline var(--yellow);
 }
 
-.courses .link:focus:nth-child(even) {
-  outline: 3.5px outset var(--green);
+.js-tools .lg-link {
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--yellow), var(--yellow));
 }
 
-.courses .link:hover {
-  color: var(--white); 
-} 
+.js-tools .lg-link:hover, .js-tools .lg-link:focus {
+  color: var(--pink);
+}
 
-@media screen and (max-width: 600px) {
+.docs {
+  grid-area: docs;
+  border: 3px solid var(--yellow);
+}
+
+.docs .title {
+  text-decoration: wavy underline var(--pink);
+}
+
+.docs .lg-link {
+  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--pink), var(--pink));
+}
+
+.docs .lg-link:hover, .docs .lg-link:focus {
+  color: var(--yellow);
+}
+
+@media screen and (max-width: 800px) {
   body {
-    overflow: hidden visible;
+    overflow: visible;
+  }
+  
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "greet"
+      "search"
+      "qa"
+      "links";
   }
 
   #greeting {
@@ -132,52 +303,119 @@ h1, h2 {
   }
 
   #compliment {
+    margin: 2% 0;
     font-size: 6vw;
   }
 
+  .search-group {
+    margin: 3% 0;
+    width: 90%;
+  }
+
+  .quick-access {
+    width: 90%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 3%;
+    border: none;
+  }
+
+  .qa-link {
+    margin-bottom: 2%;
+    border-right: none;
+    border-left-width: 4px;
+  }
+
   .links {
-    margin-left: 3%;
-  }
-
-  .references, .courses {
-    width: 45%;
-    padding-left: 3%;
-  }
-
-  .sources {
-    align-items: flex-start;
-    padding-top: 4%;
+    width: 90%;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "activelearn"
+      "design"
+      "ref"
+      "tools"
+      "docs"
+      "learn"
+      "comp";
+      justify-items: center;
   }
 
   .title {
-    text-align: left;
-    line-height: 1.45;
-    padding: 0;
-    margin: 2% 5% 0 0;
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  .hello {
-    margin: 2% 0 0 0;
-  }
-
-  #greeting {
     font-size: 7vw;
   }
 
+  .lg-link {
+    font-size: 1.3rem;
+  }
+
+  .lw-wide {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+  }
+
+  .docs {
+    border-color: var(--yellow);
+  }
+
+  .docs .title {
+    text-decoration-color: var(--pink);
+  }
+
+  .js-tools {
+    border-color: var(--green);
+  }
+
+  .js-tools .title {
+    text-decoration-color: var(--yellow);
+  }
+  
+  .js-tools .lg-link:hover, .js-tools .lg-link:focus {
+    color: var(--green);
+  }
+
+  .learning {
+    border-color: var(--pink);
+  }
+
+  .learning .title {
+    text-decoration-color: var(--yellow);
+  }
+
+  .learning .lg-link:hover, .learning .lg-link:focus {
+    color: var(--pink);
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1300px) {
+  main {
+    grid-template-areas: 
+      ". greet greet greet greet greet ."
+      ". search search search search search ."
+      ". qa qa qa qa qa ."
+      "links links links links links links links";
+  }
+
+  #greeting {
+    font-size: 8vw;
+  }
+
   #compliment {
-    font-size: 3vw;
+    font-size: 4vw;
+  }
+
+  .quick-access {
+    margin-bottom: 2%;
   }
 
   .title {
-    font-size: 3.2rem;
-    margin: 1% 20%;
+    font-size: 3.2vw;
   }
 
-  .links {
-    margin-top: 1%;
-    padding-bottom: 1%;
-    width: 75%;
+  .lg-link {
+    font-size: 1.3rem;
+  }
+
+  .lw-wide {
+    grid-template-columns: 1fr;
   }
 }
