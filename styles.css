@@ -84,7 +84,7 @@ h1, h2, h3 {
 }
 
 .quick-access {
-  width: 80%;
+  width: 85%;
   margin-top: 3%;
   grid-area: qa;
   display: flex;
