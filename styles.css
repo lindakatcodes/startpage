@@ -22,7 +22,7 @@ body {
   overflow: hidden;
   color: var(--gray);
   /* background: var(--black); */
-  background: no-repeat center/cover url('./files/img/dark-swirls.jpg');
+  background: no-repeat center/cover url('./files/img/dark-swirls-sm.jpg');
 }
 
 main {
