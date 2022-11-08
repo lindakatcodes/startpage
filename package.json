@@ -2,7 +2,7 @@
   "name": "start-pages",
   "version": "1.0.0",
   "description": "Start pages for home and work",
-  "main": "index.html",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,7 +10,7 @@
   },
   "author": "Linda Thompson",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "vite": "^4.0.4"
   }
 }
