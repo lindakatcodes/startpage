@@ -4,12 +4,13 @@
   "description": "Start pages for home and work",
   "main": "index.html",
   "scripts": {
-    "start": "snowpack dev"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "author": "Linda Thompson",
   "license": "ISC",
-  "devDependencies": {
-    "snowpack": "^3.8.8"
-  },
-  "dependencies": {}
+  "dependencies": {
+    "vite": "^4.0.4"
+  }
 }
