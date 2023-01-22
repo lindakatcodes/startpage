@@ -9,10 +9,11 @@
       rel="stylesheet"
     />
     <title>Work Homepage</title>
+    <script type="module" src="/work-script.js"></script>
   </head>
 
-  <body>
-    <h1 class="greeting">Hi Linda!</h1>
+  <body id="app">
+    <h1 class="greeting">Good {{ greeting }}, Linda!</h1>
 
     <section class="search-group">
       <form
@@ -34,7 +35,36 @@
       </form>
     </section>
 
-    <section class="links"></section>
+    <section class="links">
+      <ul>
+        <li class="links-spacer"></li>
+        <li v-for="link in coreLinks" :key="link.abbr" class="links-core">
+          <a :href="link.url"
+            ><p>{{link.abbr}}</p>
+            <span>{{link.name}}</span></a
+          >
+        </li>
+        <li v-for="link in refLinks" :key="link.abbr" class="links-ref">
+          <a :href="link.url"
+            ><p>{{link.abbr}}</p>
+            <span>{{link.name}}</span></a
+          >
+        </li>
+        <li v-for="link in toolLinks" :key="link.abbr" class="links-tool">
+          <a :href="link.url"
+            ><p>{{link.abbr}}</p>
+            <span>{{link.name}}</span></a
+          >
+        </li>
+        <li v-for="link in learnLinks" :key="link.abbr" class="links-learn">
+          <a :href="link.url"
+            ><p>{{link.abbr}}</p>
+            <span>{{link.name}}</span></a
+          >
+        </li>
+      </ul>
+    </section>
+
     <section class="design">
       <div class="design1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
