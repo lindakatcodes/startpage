@@ -1,4 +1,4 @@
-import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js";
 
 /**
  * Each link should have a url, a name to display, and a type to control the display coloring
