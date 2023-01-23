@@ -20,9 +20,9 @@ const links = [
   { name: 'YouTube', abbr: 'Yt', type: 'core', url: 'https://www.youtube.com/' },
   { name: 'Twitch', abbr: 'Tw', type: 'core', url: 'https://www.twitch.tv/' },
   { name: 'Excalidraw', abbr: 'Ex', type: 'core', url: 'https://www.excalidraw.com/' },
-  { name: 'Notion', abbr: 'No', type: 'core',  url: 'https://www.notion.com/' },
+  { name: 'Notion', abbr: 'No', type: 'core',  url: 'https://www.notion.so/lindakatcodes/This-Dot-Home-Base-a94534bdeed94c8c88e6156c9da77ed2' },
   { name: 'Color Palatte Generator', abbr: 'Cp', type: 'tool',  url: 'https://www.coolors.co/generate' },
-  { name: 'Color Contrast Checker', abbr: 'Cc', type: 'tool', url: 'https://www.colorable.jxnblk.com/' },
+  { name: 'Color Contrast Checker', abbr: 'Cc', type: 'tool', url: 'https://colorable.jxnblk.com/' },
   { name: 'Flexbox Guide', abbr: 'Fb', type: 'reference', url: 'https://www.css-tricks.com/snippets/css/a-guide-to-flexbox/' },
   { name: 'Grid Guide', abbr: 'Gr', type: 'reference', url: 'https://www.css-tricks.com/snippets/css/complete-guide-grid/' },
   { name: 'Markdown Cheatsheet', abbr: 'Md', type: 'reference', url: 'https://www.github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' },
@@ -36,7 +36,7 @@ const links = [
   { name: 'TypeScript Docs', abbr: 'Ts', type: 'reference', url: 'https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html' },
   { name: 'Egghead', abbr: 'Eg', type: 'learn',  url: 'https://www.egghead.io/' },
   { name: 'FrontEnd Masters', abbr: 'Fm', type: 'learn', url: 'https://www.frontendmasters.com/dashboard/' },
-  { name: 'Joy of React', abbr: 'Jr', type: 'learn', url: '' },
+  { name: 'Joy of React', abbr: 'Jr', type: 'learn', url: 'https://courses.joshwcomeau.com/joy-of-react' },
 
 ]
 

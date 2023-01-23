@@ -1,11 +1,11 @@
 :root {
-  --yellow: #FFD37B;
-  --green: #7EBEBD;
-  --pink: #DD7C84;
-  --gray: #C5BFC5;
-  --black: #17171A;
-  --sanserif: 'Acme', san-serif;
-  --cursive: 'Engagement', script;
+  --yellow: #ffd37b;
+  --green: #7ebebd;
+  --pink: #dd7c84;
+  --gray: #c5bfc5;
+  --black: #17171a;
+  --sanserif: "Acme", san-serif;
+  --cursive: "Engagement", script;
 }
 
 html {
@@ -22,22 +22,24 @@ body {
   overflow: hidden;
   color: var(--gray);
   /* background: var(--black); */
-  background: no-repeat center/cover url('./files/img/dark-swirls-sm.jpg');
+  background: no-repeat center/cover url("./assets/img/dark-swirls-sm.jpg");
 }
 
 main {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(auto-fill, 1fr);
-  grid-template-areas: 
+  grid-template-areas:
     ". . greet greet greet . ."
     ". . search search search . ."
     ". . qa qa qa . ."
     "links links links links links links links";
-    place-items: center;
+  place-items: center;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   font-family: var(--cursive);
   text-align: center;
@@ -100,14 +102,17 @@ h1, h2, h3 {
   text-decoration: none;
   padding: 0 1%;
   border-left: 3px solid var(--green);
-  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--pink), var(--pink));
+  background-image: linear-gradient(var(--black), var(--black)),
+    linear-gradient(var(--pink), var(--pink));
   background-size: 100% 4px, 0 4px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
-  transition: background-size 0.4s ease-in-out, background-position 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition: background-size 0.4s ease-in-out,
+    background-position 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
-.qa-link:hover, .qa-link:focus {
+.qa-link:hover,
+.qa-link:focus {
   background-size: 0 4px, 100% 4px;
   background-position: 100% 100%, 0 100%;
   color: var(--green);
@@ -127,11 +132,11 @@ h1, h2, h3 {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(auto-fill, 1fr);
   grid-template-areas:
-  "design activelearn activelearn tools" 
-  "design learn learn tools" 
-  "design learn learn docs" 
-  "ref learn learn docs" 
-  "ref comp comp docs";
+    "design activelearn activelearn tools"
+    "design learn learn tools"
+    "design learn learn docs"
+    "ref learn learn docs"
+    "ref comp comp docs";
 }
 
 .link-group {
@@ -166,10 +171,12 @@ h1, h2, h3 {
   background-size: 100% 3px, 0 3px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
-  transition: color 0.4s ease-in-out, background-size 0.4s ease-in-out, background-position 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out, background-size 0.4s ease-in-out,
+    background-position 0.4s ease-in-out;
 }
 
-.lg-link:hover, .lg-link:focus {
+.lg-link:hover,
+.lg-link:focus {
   background-size: 0 3px, 100% 3px;
   background-position: 100% 100%, 0 100%;
   outline: none;
@@ -193,10 +200,12 @@ h1, h2, h3 {
 }
 
 .design .lg-link {
-  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--pink), var(--pink));
+  background-image: linear-gradient(var(--black), var(--black)),
+    linear-gradient(var(--pink), var(--pink));
 }
 
-.design .lg-link:hover, .design .lg-link:focus {
+.design .lg-link:hover,
+.design .lg-link:focus {
   color: var(--green);
 }
 
@@ -210,10 +219,12 @@ h1, h2, h3 {
 }
 
 .reference .lg-link {
-  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--green), var(--green));
+  background-image: linear-gradient(var(--black), var(--black)),
+    linear-gradient(var(--green), var(--green));
 }
 
-.reference .lg-link:hover, .reference .lg-link:focus {
+.reference .lg-link:hover,
+.reference .lg-link:focus {
   color: var(--pink);
 }
 
@@ -227,10 +238,12 @@ h1, h2, h3 {
 }
 
 .active-learning .lg-link {
-  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--green), var(--green));
+  background-image: linear-gradient(var(--black), var(--black)),
+    linear-gradient(var(--green), var(--green));
 }
 
-.active-learning .lg-link:hover, .active-learning .lg-link:focus {
+.active-learning .lg-link:hover,
+.active-learning .lg-link:focus {
   color: var(--yellow);
 }
 
@@ -244,10 +257,12 @@ h1, h2, h3 {
 }
 
 .learning .lg-link {
-  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--yellow), var(--yellow));
+  background-image: linear-gradient(var(--black), var(--black)),
+    linear-gradient(var(--yellow), var(--yellow));
 }
 
-.learning .lg-link:hover, .learning .lg-link:focus {
+.learning .lg-link:hover,
+.learning .lg-link:focus {
   color: var(--green);
 }
 
@@ -261,10 +276,12 @@ h1, h2, h3 {
 }
 
 .js-tools .lg-link {
-  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--yellow), var(--yellow));
+  background-image: linear-gradient(var(--black), var(--black)),
+    linear-gradient(var(--yellow), var(--yellow));
 }
 
-.js-tools .lg-link:hover, .js-tools .lg-link:focus {
+.js-tools .lg-link:hover,
+.js-tools .lg-link:focus {
   color: var(--pink);
 }
 
@@ -278,10 +295,12 @@ h1, h2, h3 {
 }
 
 .docs .lg-link {
-  background-image: linear-gradient(var(--black), var(--black)), linear-gradient(var(--pink), var(--pink));
+  background-image: linear-gradient(var(--black), var(--black)),
+    linear-gradient(var(--pink), var(--pink));
 }
 
-.docs .lg-link:hover, .docs .lg-link:focus {
+.docs .lg-link:hover,
+.docs .lg-link:focus {
   color: var(--yellow);
 }
 
@@ -291,7 +310,7 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
   }
-  
+
   main {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -340,7 +359,7 @@ h1, h2, h3 {
       "docs"
       "learn"
       "comp";
-      justify-items: center;
+    justify-items: center;
   }
 
   .title {
@@ -371,8 +390,9 @@ h1, h2, h3 {
   .js-tools .title {
     text-decoration-color: var(--yellow);
   }
-  
-  .js-tools .lg-link:hover, .js-tools .lg-link:focus {
+
+  .js-tools .lg-link:hover,
+  .js-tools .lg-link:focus {
     color: var(--green);
   }
 
@@ -384,14 +404,15 @@ h1, h2, h3 {
     text-decoration-color: var(--yellow);
   }
 
-  .learning .lg-link:hover, .learning .lg-link:focus {
+  .learning .lg-link:hover,
+  .learning .lg-link:focus {
     color: var(--pink);
   }
 }
 
 @media screen and (min-width: 801px) and (max-width: 1300px) {
   main {
-    grid-template-areas: 
+    grid-template-areas:
       ". greet greet greet greet greet ."
       ". search search search search search ."
       ". qa qa qa qa qa ."
