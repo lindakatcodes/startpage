@@ -20,7 +20,7 @@ const links = [
   { name: 'YouTube', abbr: 'Yt', type: 'core', url: 'https://www.youtube.com/' },
   { name: 'Twitch', abbr: 'Tw', type: 'core', url: 'https://www.twitch.tv/' },
   { name: 'Excalidraw', abbr: 'Ex', type: 'core', url: 'https://www.excalidraw.com/' },
-  { name: 'Notion', abbr: 'No', type: 'core',  url: 'https://www.notion.so/lindakatcodes/This-Dot-Home-Base-a94534bdeed94c8c88e6156c9da77ed2' },
+  { name: 'Notion', abbr: 'No', type: 'core',  url: 'https://www.notion.so' },
   { name: 'Color Palatte Generator', abbr: 'Cp', type: 'tool',  url: 'https://www.coolors.co/generate' },
   { name: 'Color Contrast Checker', abbr: 'Cc', type: 'tool', url: 'https://colorable.jxnblk.com/' },
   { name: 'Flexbox Guide', abbr: 'Fb', type: 'reference', url: 'https://www.css-tricks.com/snippets/css/a-guide-to-flexbox/' },
