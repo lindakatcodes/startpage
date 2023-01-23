@@ -237,7 +237,7 @@
       const time = new Date().getHours();
 
       function whichMessage(hour) {
-        let greeting = '';
+        let greeting = "";
         switch (hour) {
           case 6:
           case 7:
@@ -245,7 +245,7 @@
           case 9:
           case 10:
           case 11:
-            greeting = 'morning';
+            greeting = "morning";
             break;
           case 12:
           case 13:
@@ -253,7 +253,7 @@
           case 15:
           case 16:
           case 17:
-            greeting = 'afternoon';
+            greeting = "afternoon";
             break;
           case 18:
           case 19:
@@ -261,7 +261,7 @@
           case 21:
           case 22:
           case 23:
-            greeting = 'evening';
+            greeting = "evening";
             break;
           case 0:
           case 1:
@@ -269,36 +269,36 @@
           case 3:
           case 4:
           case 5:
-            greeting = 'night';
+            greeting = "night";
             break;
           default:
-            greeting = 'day';
+            greeting = "day";
             break;
         }
         return greeting;
       }
 
       const compliments = [
-        'awesome',
-        'smart',
-        'capable',
-        'worth it',
-        'amazing',
-        'lovely',
-        'a badass',
-        'incredible',
-        'resilient',
-        'good',
+        "awesome",
+        "smart",
+        "capable",
+        "worth it",
+        "amazing",
+        "lovely",
+        "a badass",
+        "incredible",
+        "resilient",
+        "good",
       ];
       function number() {
         let pick = Math.round(Math.random() * (compliments.length - 1));
         return pick;
       }
 
-      document.getElementById('greeting').innerHTML = `Good ${whichMessage(
+      document.getElementById("greeting").innerHTML = `Good ${whichMessage(
         time
       )}, Linda.`;
-      document.getElementById('compliment').innerHTML = `(You're ${
+      document.getElementById("compliment").innerHTML = `(You're ${
         compliments[number()]
       }, lady.)`;
     </script>
