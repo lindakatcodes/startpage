@@ -37,6 +37,8 @@ const links = [
   { name: 'Egghead', abbr: 'Eg', type: 'learn',  url: 'https://www.egghead.io/' },
   { name: 'FrontEnd Masters', abbr: 'Fm', type: 'learn', url: 'https://www.frontendmasters.com/dashboard/' },
   { name: 'Joy of React', abbr: 'Jr', type: 'learn', url: 'https://courses.joshwcomeau.com/joy-of-react' },
+  { name: 'Llama Life', abbr: 'Ll', type: 'core', url: 'https://llamalife.co/tasks' },
+  { name: 'Astro Docs', abbr: 'As', type: 'reference', url: 'https://docs.astro.build/en/install/auto/'}
 
 ]
 
@@ -48,19 +50,29 @@ createApp({
   },
   computed: {
     coreLinks() {
-      return links.filter((link) => link.type === 'core') || [];
+      return this.alphaSort(links.filter((link) => link.type === 'core')) || [];
     },
     refLinks() {
-      return links.filter((link) => link.type === 'reference') || [];
+      return this.alphaSort(links.filter((link) => link.type === 'reference')) || [];
     },
     toolLinks() {
-      return links.filter((link) => link.type === 'tool') || [];
+      return this.alphaSort(links.filter((link) => link.type === 'tool')) || [];
     },
     learnLinks() {
-      return links.filter((link) => link.type === 'learn') || [];
+      return this.alphaSort(links.filter((link) => link.type === 'learn')) || [];
     }
   },
   methods: {
+    alphaSort(list) {
+      return list.sort((a, b) => {
+        if (a.abbr > b.abbr) {
+          return 1;
+        } else if (a.abbr < b.abbr) {
+          return -1;
+        }
+        return 0;
+      })
+    },
     getDaytime(hour) {
       let daytime = '';
 
