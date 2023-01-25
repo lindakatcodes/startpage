@@ -37,7 +37,7 @@ const links = [
   { name: 'Egghead', abbr: 'Eg', type: 'learn',  url: 'https://www.egghead.io/' },
   { name: 'FrontEnd Masters', abbr: 'Fm', type: 'learn', url: 'https://www.frontendmasters.com/dashboard/' },
   { name: 'Joy of React', abbr: 'Jr', type: 'learn', url: 'https://courses.joshwcomeau.com/joy-of-react' },
-  { name: 'Llama Life', abbr: 'Ll', type: 'core', url: 'https://llamalife.co/tasks' },
+  { name: 'Llama Life', abbr: 'Ll', type: 'core', url: 'https://llamalife.co' },
   { name: 'Astro Docs', abbr: 'As', type: 'reference', url: 'https://docs.astro.build/en/install/auto/'}
 
 ]
