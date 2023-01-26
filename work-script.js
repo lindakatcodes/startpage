@@ -1,4 +1,4 @@
-import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js";
+import { createApp, ref } from "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js";
 
 /**
  * Each link should have a url, a name to display, and a type to control the display coloring
@@ -37,12 +37,19 @@ const links = [
   { name: 'Egghead', abbr: 'Eg', type: 'learn',  url: 'https://www.egghead.io/' },
   { name: 'FrontEnd Masters', abbr: 'Fm', type: 'learn', url: 'https://www.frontendmasters.com/dashboard/' },
   { name: 'Joy of React', abbr: 'Jr', type: 'learn', url: 'https://courses.joshwcomeau.com/joy-of-react' },
-  { name: 'Llama Life', abbr: 'Ll', type: 'core', url: 'https://llamalife.co' },
+  { name: 'Box-shadow Generator', abbr: 'Bs', type: 'tool', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Box-shadow_generator' },
   { name: 'Astro Docs', abbr: 'As', type: 'reference', url: 'https://docs.astro.build/en/install/auto/'}
 
 ]
 
+
 createApp({
+  setup() {
+    const searchInput = ref(null);
+    return {
+      searchInput
+    }
+  },
   data() {
     return {
       greeting: ''
@@ -118,5 +125,8 @@ createApp({
   },
   created() {
     this.greeting = this.getDaytime(new Date().getHours());
+  },
+  mounted() {
+    this.searchInput.focus();
   }
 }).mount("#app");
