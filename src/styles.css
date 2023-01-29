@@ -1,0 +1,39 @@
+:root {
+  --purple: #b082a0;
+  --green: #618985;
+  --pink: #cb7c82;
+  --yellow: #f6f679;
+  --offwhite: #fdf7ec;
+  --brown: #231b17;
+  --sanserif: "Signika Negative", san-serif;
+  --cursive: "Quando", script;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+  font-family: var(--sanserif);
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: var(--offwhite);
+  background: var(--brown);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--cursive);
+  text-align: center;
+  font-weight: lighter;
+}
+
+p {
+  text-align: center;
+}

@@ -1,5 +1,4 @@
 <template>
-  <!-- <RouterView :links="getLinks()"/> -->
   <main>
     <h1 class="greeting">Good {{ greeting }}, Linda!</h1>
 
@@ -17,41 +16,14 @@
           name="query"
           id="search"
           ref="searchInput"
+          autofocus
           autocomplete="on"
           placeholder="What can I help you find?"
         />
       </form>
     </section>
 
-    <section class="links">
-      <ul>
-        <li class="links-spacer"></li>
-        <li v-for="link in coreLinks" :key="link.abbr" class="links-core">
-          <a :href="link.url"
-            ><p>{{ link.abbr }}</p>
-            <span>{{ link.name }}</span></a
-          >
-        </li>
-        <li v-for="link in refLinks" :key="link.abbr" class="links-ref">
-          <a :href="link.url"
-            ><p>{{ link.abbr }}</p>
-            <span>{{ link.name }}</span></a
-          >
-        </li>
-        <li v-for="link in toolLinks" :key="link.abbr" class="links-tool">
-          <a :href="link.url"
-            ><p>{{ link.abbr }}</p>
-            <span>{{ link.name }}</span></a
-          >
-        </li>
-        <li v-for="link in learnLinks" :key="link.abbr" class="links-learn">
-          <a :href="link.url"
-            ><p>{{ link.abbr }}</p>
-            <span>{{ link.name }}</span></a
-          >
-        </li>
-      </ul>
-    </section>
+    <link-list :links="getLinks()"></link-list>
 
     <section class="design">
       <div class="design1">
@@ -85,131 +57,117 @@
   </main>
 </template>
 
-<script>
+<script setup>
 import { useRoute } from "vue-router";
-import { ref, onMounted } from "vue";
+import { onBeforeMount } from "vue";
+import LinkList from "./LinkList.vue";
 import HomeLinks from "./linkListHome";
 import WorkLinks from "./linkListWork";
 
-// const searchInput = ref(null);
+const route = useRoute();
 
-// onMounted(() => {
-//   const path = route.path;
-//   if (path === '/') {
-//     return HomeLinks;
-//   } else if (path === '/work') {
-//     return WorkLinks;
-//   }
-// })
+let greeting = "";
 
-export default {
-  setup() {
-    const route = useRoute();
-    const searchInput = ref(null);
-    const path = route.path;
-    return {
-      searchInput,
-      path
-    };
-  },
-  data() {
-    return {
-      greeting: "",
-      links: [],
-    };
-  },
-  computed: {
-    coreLinks() {
-      return (
-        this.alphaSort(this.links.filter((link) => link.type === "core")) || []
-      );
-    },
-    refLinks() {
-      return (
-        this.alphaSort(
-          this.links.filter((link) => link.type === "reference")
-        ) || []
-      );
-    },
-    toolLinks() {
-      return (
-        this.alphaSort(this.links.filter((link) => link.type === "tool")) || []
-      );
-    },
-    learnLinks() {
-      return (
-        this.alphaSort(this.links.filter((link) => link.type === "learn")) || []
-      );
-    },
-  },
-  methods: {
-    alphaSort(list) {
-      return list.sort((a, b) => {
-        if (a.abbr > b.abbr) {
-          return 1;
-        } else if (a.abbr < b.abbr) {
-          return -1;
-        }
-        return 0;
-      });
-    },
-    getDaytime(hour) {
-      let daytime = "";
+onBeforeMount(() => {
+  greeting = getDaytime(new Date().getHours());
+});
 
-      switch (hour) {
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-        case 10:
-        case 11:
-          daytime = "morning";
-          break;
-        case 12:
-        case 13:
-        case 14:
-        case 15:
-        case 16:
-        case 17:
-          daytime = "afternoon";
-          break;
-        case 18:
-        case 19:
-        case 20:
-        case 21:
-        case 22:
-        case 23:
-          daytime = "evening";
-          break;
-        case 0:
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-          daytime = "night";
-          break;
-        default:
-          daytime = "day";
-          break;
-      }
-      return daytime;
-    },
-  },
-  created() {
-    this.greeting = this.getDaytime(new Date().getHours());
-  },
-  mounted() {
+function getLinks() {
+  const routeName = route.name;
+  if (routeName === "Home") {
+    return HomeLinks;
+  } else if (routeName === "Work") {
+    return WorkLinks;
+  }
+}
 
-    if (this.path === "/") {
-      this.links = HomeLinks;
-    } else if (this.path === "/work") {
-      this.links = WorkLinks;
-    }
+function getDaytime(hour) {
+  let daytime = "";
 
-    this.searchInput.focus();
-  },
-};
+  switch (hour) {
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+    case 11:
+      daytime = "morning";
+      break;
+    case 12:
+    case 13:
+    case 14:
+    case 15:
+    case 16:
+    case 17:
+      daytime = "afternoon";
+      break;
+    case 18:
+    case 19:
+    case 20:
+    case 21:
+    case 22:
+    case 23:
+      daytime = "evening";
+      break;
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      daytime = "night";
+      break;
+    default:
+      daytime = "day";
+      break;
+  }
+  return daytime;
+}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+.greeting {
+  margin-top: 15px;
+}
+
+.search-group {
+  margin: 3% auto 1%;
+  width: 50%;
+}
+
+#search-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search-icon {
+  color: var(--offwhite);
+}
+
+#search {
+  width: 97%;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid var(--offwhite);
+  padding: 0.75%;
+  color: var(--offwhite);
+  font-size: 1.05rem;
+}
+
+.design1,
+.design2,
+.design3 {
+  width: 100%;
+  height: 30%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  opacity: 0.85;
+}
+
+.design1 {
+  z-index: 1;
+}
+</style>
