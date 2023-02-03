@@ -8,7 +8,6 @@ export default [
   { name: 'Flexbox Guide', abbr: 'Fb', type: 'reference', url: 'https://www.css-tricks.com/snippets/css/a-guide-to-flexbox/' },
   { name: 'Grid Guide', abbr: 'Gr', type: 'reference', url: 'https://www.css-tricks.com/snippets/css/complete-guide-grid/' },
   { name: 'Markdown Cheatsheet', abbr: 'Md', type: 'reference', url: 'https://www.github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' },
-  { name: 'FreeCodeCamp', abbr: 'Fc', type: 'learn', url: 'https://www.freecodecamp.org/learn' },
   { name: 'Advent of Code', abbr: 'Ac', type: 'learn', url: 'https://www.adventofcode.com/' },
   { name: 'RegExr', abbr: 'Re', type: 'tool', url: 'https://www.regexr.com/' },
   { name: 'A11y Checklist', abbr: 'Al', type: 'reference', url: 'https://www.a11yproject.com/checklist/' },
