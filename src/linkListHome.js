@@ -1,7 +1,6 @@
 export default [
   { name: 'YouTube', abbr: 'Yt', type: 'core', url: 'https://www.youtube.com/' },
   { name: 'Twitch', abbr: 'Tw', type: 'core', url: 'https://www.twitch.tv/' },
-  { name: 'Excalidraw', abbr: 'Ex', type: 'core', url: 'https://www.excalidraw.com/' },
   { name: 'Notion', abbr: 'No', type: 'core',  url: 'https://www.notion.so' },
   { name: 'Color Palatte Generator', abbr: 'Cp', type: 'tool',  url: 'https://www.coolors.co/generate' },
   { name: 'Color Contrast Checker', abbr: 'Cc', type: 'tool', url: 'https://colorable.jxnblk.com/' },
@@ -16,10 +15,8 @@ export default [
   { name: 'React Docs', abbr: 'Re', type: 'reference', url: 'https://www.reactjs.org/docs/getting-started.html' },
   { name: 'Angular Docs', abbr: 'Ng', type: 'reference',  url: 'https://www.angular.io/docs' },
   { name: 'TypeScript Docs', abbr: 'Ts', type: 'reference', url: 'https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html' },
-  { name: 'Egghead', abbr: 'Eg', type: 'learn',  url: 'https://www.egghead.io/' },
-  { name: 'FrontEnd Masters', abbr: 'Fm', type: 'learn', url: 'https://www.frontendmasters.com/dashboard/' },
   { name: 'Joy of React', abbr: 'Jr', type: 'learn', url: 'https://courses.joshwcomeau.com/joy-of-react' },
   { name: 'Box-shadow Generator', abbr: 'Bs', type: 'tool', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Box-shadow_generator' },
-  { name: 'Astro Docs', abbr: 'As', type: 'reference', url: 'https://docs.astro.build/en/install/auto/'}
-
+  { name: 'Astro Docs', abbr: 'As', type: 'reference', url: 'https://docs.astro.build/en/install/auto/'},
+  { name: 'Science of Well-Being', abbr: 'Wb', type: 'learn', url: 'https://www.coursera.org/learn/the-science-of-well-being/home'}
 ]

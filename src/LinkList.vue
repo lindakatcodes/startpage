@@ -1,7 +1,6 @@
 <template>
   <section class="links">
       <ul>
-        <li class="links-spacer"></li>
         <li v-for="link in coreLinks" :key="link.abbr" class="links-core">
           <a :href="link.url"
             ><p>{{ link.abbr }}</p>
@@ -81,13 +80,6 @@ function alphaSort(list) {
   justify-content: center;
   grid-auto-flow: column;
   gap: 14px;
-}
-
-.links-spacer {
-  grid-row: 3;
-  grid-column: 3 / span 5;
-  justify-self: stretch;
-  border-color: transparent;
 }
 
 .links li {

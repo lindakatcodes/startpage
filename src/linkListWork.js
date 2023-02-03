@@ -21,5 +21,4 @@ export default [
   { name: 'Joy of React', abbr: 'Jr', type: 'learn', url: 'https://courses.joshwcomeau.com/joy-of-react' },
   { name: 'Box-shadow Generator', abbr: 'Bs', type: 'tool', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Box-shadow_generator' },
   { name: 'Astro Docs', abbr: 'As', type: 'reference', url: 'https://docs.astro.build/en/install/auto/'}
-
 ]
