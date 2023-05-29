@@ -23,7 +23,7 @@
       </form>
     </section>
 
-    <link-list :links="currentLinks"></link-list>
+    <router-view></router-view>
 
     <section class="design">
       <div class="design1">
@@ -58,26 +58,12 @@
 </template>
 
 <script setup>
-import { useRoute } from "vue-router";
-import { onBeforeMount, computed } from "vue";
-import LinkList from "./LinkList.vue";
-import HomeLinks from "./linkListHome";
-import WorkLinks from "./linkListWork";
+import { onBeforeMount } from "vue";
 
-const route = useRoute();
 let greeting = "";
 
 onBeforeMount(() => {
   greeting = getDaytime(new Date().getHours());
-});
-
-const currentLinks = computed(() => {
-  const routeName = route.name;
-  if (routeName === "Home") {
-    return HomeLinks;
-  } else if (routeName === "Work") {
-    return WorkLinks;
-  }
 });
 
 function getDaytime(hour) {
