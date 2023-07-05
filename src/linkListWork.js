@@ -110,4 +110,10 @@ export default [
     type: "reference",
     url: "https://docs.astro.build/en/install/auto/",
   },
+  {
+    name: "SVG Viewer",
+    abbr: "Sv",
+    type: "tool",
+    url: "https://www.svgviewer.dev/",
+  },
 ];
