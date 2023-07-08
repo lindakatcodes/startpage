@@ -105,9 +105,9 @@ export default [
     url: "https://www.coursera.org/learn/the-science-of-well-being/home",
   },
   {
-    name: "Puppy Logs",
-    abbr: "Gl",
+    name: "Todoist",
+    abbr: "Td",
     type: "core",
-    url: "https://docs.google.com/spreadsheets/d/1z8dBskSiLXk5X4vycJVp1b1Z_XUMlgZFcams_nCPhZw/edit",
+    url: "https://todoist.com/app/",
   },
 ];
