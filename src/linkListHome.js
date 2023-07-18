@@ -66,7 +66,7 @@ export default [
     name: "React Docs",
     abbr: "Re",
     type: "reference",
-    url: "https://www.reactjs.org/docs/getting-started.html",
+    url: "https://react.dev/reference/react",
   },
   {
     name: "Angular Docs",
